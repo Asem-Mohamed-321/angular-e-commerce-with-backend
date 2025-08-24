@@ -1,0 +1,273 @@
+{
+  "users": [],
+  "categories": [
+    {
+      "id": 1,
+      "cat": "sofa"
+    },
+    {
+      "id": 2,
+      "cat": "chair"
+    },
+    {
+      "id": 3,
+      "cat": "bed"
+    },
+    {
+      "id": 4,
+      "cat": "table"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "image": "assets/sofas/1.jpg",
+      "desc": "Gray comfortable sofa",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "sofa"
+    },
+    {
+      "id": 2,
+      "image": "assets/sofas/2.jpg",
+      "desc": "modern-design sofa",
+      "price": "$150.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "sofa"
+    },
+    {
+      "id": 3,
+      "image": "assets/sofas/3.jpg",
+      "desc": "Elegant red sofa",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": true,
+      "cat": "sofa"
+    },
+    {
+      "id": 4,
+      "image": "assets/sofas/4.jpg",
+      "desc": "Sofa with many pillows",
+      "price": "$99.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "sofa"
+    },
+    {
+      "id": 5,
+      "image": "assets/sofas/5.jpg",
+      "desc": "Sofa with many pillows",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "sofa"
+    },
+    {
+      "id": 6,
+      "image": "assets/chairs/1.jpg",
+      "desc": "Black rigid chair",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "chair"
+    },
+    {
+      "id": 7,
+      "image": "assets/chairs/2.jpg",
+      "desc": "Woden chair",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": true,
+      "cat": "chair"
+    },
+    {
+      "id": 8,
+      "image": "assets/chairs/3.jpg",
+      "desc": "White small chair",
+      "price": "$1.00",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "chair",
+      "img": "assets/chairs/3.jpg"
+    },
+    {
+      "id": 9,
+      "image": "assets/chairs/4.jpg",
+      "desc": "Long legs chair",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "chair"
+    },
+    {
+      "id": 10,
+      "image": "assets/beds/1.jpg",
+      "desc": "King size bed",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": true,
+      "cat": "bed"
+    },
+    {
+      "id": 11,
+      "image": "assets/beds/2.jpg",
+      "desc": "Larg size king bed",
+      "price": "$199.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "bed"
+    },
+    {
+      "id": 12,
+      "image": "assets/beds/3.jpg",
+      "desc": "comfortable white bed",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "bed"
+    },
+    {
+      "id": 13,
+      "image": "assets/beds/4.jpg",
+      "desc": "double king-sized bed",
+      "price": "$299.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "bed"
+    },
+    {
+      "id": 14,
+      "image": "assets/desks/1.jpg",
+      "desc": "Wide woden desk",
+      "price": "$70.00",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "table"
+    },
+    {
+      "id": 15,
+      "image": "assets/desks/2.jpg",
+      "desc": "White desk",
+      "price": "$70.00",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "table"
+    },
+    {
+      "id": 16,
+      "image": "assets/desks/3.jpg",
+      "desc": "Neat desk with metal legs",
+      "price": "$59.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "table"
+    },
+    {
+      "id": 17,
+      "reviews": 0,
+      "starts": 0,
+      "fav": true,
+      "desc": "New Product",
+      "cat": "table",
+      "price": "$10000.00",
+      "image": "https://i.ibb.co/NdNyZ141/5.jpg"
+    }
+  ],
+  "cartItems": [
+    {
+      "_id": "6890c12cfff5e0dff116168f",
+      "image": "assets/sofas/1.jpg",
+      "desc": "Gray comfortable sofa",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "sofa",
+      "__v": 0,
+      "quantity": 1,
+      "id": 1
+    },
+    {
+      "_id": "6890c12cfff5e0dff116168f",
+      "image": "assets/sofas/1.jpg",
+      "desc": "Gray comfortable sofa",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": false,
+      "cat": "sofa",
+      "__v": 0,
+      "quantity": 1,
+      "id": 2
+    }
+  ],
+  "favourites": [
+    {
+      "id": 3,
+      "image": "assets/sofas/3.jpg",
+      "desc": "Elegant red sofa",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": true,
+      "cat": "sofa"
+    },
+    {
+      "id": 7,
+      "image": "assets/chairs/2.jpg",
+      "desc": "Woden chair",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": true,
+      "cat": "chair"
+    },
+    {
+      "id": 10,
+      "image": "assets/beds/1.jpg",
+      "desc": "King size bed",
+      "price": "$129.99",
+      "reviews": 600,
+      "starts": 5,
+      "fav": true,
+      "cat": "bed"
+    },
+    {
+      "id": 17,
+      "reviews": 0,
+      "starts": 0,
+      "fav": true,
+      "desc": "New Product",
+      "cat": "table",
+      "price": "$10000.00",
+      "image": "https://i.ibb.co/NdNyZ141/5.jpg"
+    }
+  ],
+  "profiles": [
+    {
+      "name": "asem",
+      "role": "ITI student",
+      "about": "This is my new description",
+      "avatar": "https://i.ibb.co/My29Mk9B/profile-Pic.png",
+      "id": 1
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<div class="h-[50vh] w-screen relative flex justify-center items-center gap-2 mt-20 mb-20" >
+            <div class="rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 p-2"  (click)="prev()" (mouseenter)="onHover()" (mouseleave)="onLeave()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                </svg>
+            </div>
+
+             <!-- Slide Card Wrapper -->
+  <div class="w-full max-w-xl h-full flex justify-center items-center" >
+    <!-- Only show the current product -->
+    <div *ngIf="products.length > 0" class="w-full h-full flex justify-center items-center">
+      <div class="max-w-sm w-full bg-white border border-gray-200 rounded-lg shadow p-4" (mouseenter)="onHover()" (mouseleave)="onLeave()">
+        <img [src]="products[currentIndex].image" alt="" class="rounded-t-lg h-[25vh] w-full object-contain  mb-4" />
+        <h5 class="text-xl font-bold text-gray-900 mb-2">
+          {{ products[currentIndex].title }}
+        </h5>
+        <p class="text-gray-700 mb-4">{{ products[currentIndex].desc }}</p>
+        <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700">
+          Shop Now
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200 p-2"  (click)="next()" (mouseenter)="onHover()" (mouseleave)="onLeave()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+
+            </div>
+              </div>

@@ -1,0 +1,39 @@
+<div class="max-w-5xl mx-auto bg-white p-6 shadow rounded-lg mb-4">
+  <!-- Banner and Avatar -->
+   @if(profile){
+  <div class="relative">
+    <img [src]="cover" alt="banner" class="w-full h-40 object-cover rounded-md">
+    
+    @if(this.profile.avatar){<img [src]="profile.avatar" alt="avatar" class="absolute -bottom-8 left-6 w-20 h-20 rounded-full border-4 border-white shadow">}
+    @else{<img src="../../assets/profilePic.png" alt="avatar" class="absolute -bottom-8 left-6 w-20 h-20 rounded-full border-4 border-white shadow">}
+  </div>
+
+  <!-- Intro Section -->
+  <div class="mt-12 pl-6">
+    <h2 class="text-xl font-bold text-gray-800">{{ profile.name }}</h2>
+    <p class="text-sm text-gray-600">{{ profile.job }}</p>
+  </div>
+
+  <!-- About -->
+  <div class="mt-6 pl-6">
+    <h3 class="text-lg font-semibold">About</h3>
+    @if(profile.about){
+    <p class="text-gray-700 mt-1 text-sm">{{ profile.about }}</p>
+    }@else{
+    <p class="text-gray-700 mt-1 text-sm">This user has no about-section</p>
+    }
+  </div>
+  }
+  @else{
+    Loading...
+  }
+    <hr class="h-px my-8 bg-gray-200 border-0">
+    <div class="flex space-x-4 mb-2">
+        <a  routerLink="/profile/favorite" routerLinkActive="bg-gray-200 disable"  [routerLinkActiveOptions]="{ exact: true }" class="rounded-md  px-3 py-2 text-sm font-medium text-blue hover:bg-gray-100 hover:font-bold ">Favorite</a>
+        <a  routerLink="/profile/edit-profile" routerLinkActive="bg-gray-200 disable"  [routerLinkActiveOptions]="{ exact: true }" class="rounded-md  px-3 py-2 text-sm font-medium text-blue hover:bg-gray-100 hover:font-bold ">Edit profile</a>
+    </div>
+  
+    <div>
+        <router-outlet />
+    </div>
+</div>
