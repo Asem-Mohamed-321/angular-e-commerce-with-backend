@@ -2,29 +2,57 @@ const express = require('express')
 const mongoose = require('mongoose')
 const router = express.Router();
 const Cart = require('../Schemas/cart')
+const jwt = require('jsonwebtoken')
 
 mongoose.connect('mongodb://localhost:27017')
 
-router.get('/', async(req,res)=>{
-    res.status(200).send(await Cart.find({}).populate('user').populate('product'))
-}).post('/',async(req,res)=>{
-    const userId = req.body.userId;
-    const productId = req.body.productId;
-    console.log(`post with userId = ${userId} ,and productId = ${productId}`)
-    cartItem = await Cart.findOne({"user" :userId ,"product" :productId });
-    if(cartItem){
-        //increase the quantity by one
-        cartItem.quantity +=1;
-        await cartItem.save();
-        return res.status(200).send({ message: "Quantity updated", cartItem });
-    }else{
-        const newCartItem = await Cart.create({
-            user: userId,
-            product: productId,
-            quantity: 1
-        });
-        return res.status(201).send({ message: "Item added to cart", cartItem: newCartItem });
-    }
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  console.log("Auth header:", authHeader);
+
+  const token = authHeader?.split(' ')[1];
+  console.log("Extracted token:", token);
+
+  if (!token) {
+    console.log("No token provided");
+    return res.status(401).send({ message: 'No token provided' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, "privateKey");
+    console.log("Decoded token:", decoded);
+    req.user = decoded.data;
+    next();
+  } catch (err) {
+    console.error("JWT verification failed:", err.message);
+    return res.status(403).send({ message: 'Invalid token' });
+  }
+};
+
+
+router.get('/', authenticateToken, async (req, res) => {
+  const userId = req.user._id; // extracted from token
+  const userCart = await Cart.find({ user: userId }).populate('product');
+  res.status(200).send(userCart);
+}).post('/', authenticateToken, async (req, res) => {
+  const userId = req.user._id;
+  const productId = req.body.productId;
+
+  const existingItem = await Cart.findOne({ user: userId, product: productId });
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+    await existingItem.save();
+    return res.status(200).send({ message: "Quantity updated", cartItem: existingItem });
+  }
+
+  const newItem = await Cart.create({
+    user: userId,
+    product: productId,
+    quantity: 1
+  });
+
+  res.status(201).send({ message: "Item added to cart", cartItem: newItem });
 }).put('/:id',async (req,res)=>{
     const id = req.params.id;
     const newCartItem = req.body;
